@@ -1,7 +1,7 @@
 var minutes = 25;
 var seconds = "00";
 
-var bell = new Audio(b15.mp3);
+var bell = new Audio("b15.mp3");
 
 function template() {
     document.getElementById("minutes").innerHTML = minutes;
