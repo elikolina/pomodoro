@@ -1,5 +1,6 @@
 var minutes = 25;
 var seconds = "00";
+var rounds = 0;
 
 var bell = new Audio("b15.mp3");
 
@@ -31,8 +32,15 @@ function start() {
             if (minutes <= 0) {
                 clearInterval(minutes_interval);
                 clearInterval(seconds_interval);
-
-                document.getElementById("done").innerHTML = "Session completed! Take a break.";
+                
+                rounds += 1;
+                
+                if (rounds == 4){
+                    document.getElementById("done").innerHTML = "Set completed! Take a 20 minute break.";
+                    rounds = 0;
+                } else {
+                    document.getElementById("done").innerHTML = "Session completed! Take a 5 minute break.";
+                }
 
                 document.getElementById("done").classList.add("show_message");
 
